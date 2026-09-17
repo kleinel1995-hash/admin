@@ -6,7 +6,10 @@
 <title>Rifas Luxury RD · Admin</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+box-sizing:border-box;
+}
 
 :root{
 --bg:#050816;
@@ -33,8 +36,15 @@ radial-gradient(circle at 90% 10%,#35145b 0,transparent 28%),
 linear-gradient(180deg,#040714,#02040b);
 }
 
-button,input,textarea{font-family:inherit}
-button{cursor:pointer}
+button,
+input,
+textarea{
+font-family:inherit;
+}
+
+button{
+cursor:pointer;
+}
 
 header{
 height:72px;
@@ -94,8 +104,14 @@ max-width:500px;
 margin:80px auto;
 }
 
-h1{margin-top:0;font-size:28px}
-h2{margin-top:0}
+h1{
+margin-top:0;
+font-size:28px;
+}
+
+h2{
+margin-top:0;
+}
 
 .muted{
 color:var(--muted);
@@ -108,7 +124,8 @@ margin:17px 0 8px;
 font-weight:800;
 }
 
-input,textarea{
+input,
+textarea{
 width:100%;
 padding:15px;
 border:1px solid #2c3954;
@@ -124,7 +141,8 @@ min-height:110px;
 resize:vertical;
 }
 
-input:focus,textarea:focus{
+input:focus,
+textarea:focus{
 border-color:var(--blue);
 box-shadow:0 0 0 3px #42e8ff12;
 }
@@ -151,7 +169,9 @@ color:#ff7184;
 font-weight:bold;
 }
 
-.panel{display:none}
+.panel{
+display:none;
+}
 
 .tabs{
 display:flex;
@@ -174,8 +194,18 @@ color:#06101b;
 background:linear-gradient(90deg,var(--blue),#8d82ff);
 }
 
-.tabContent{display:none}
-.tabContent.active{display:block}
+.tabContent{
+display:none;
+}
+
+.tabContent.active{
+display:block;
+}
+
+
+/* =========================
+   RIFAS
+========================= */
 
 .rifa{
 margin-top:14px;
@@ -191,7 +221,9 @@ justify-content:space-between;
 gap:15px;
 }
 
-.rifa h3{margin:0 0 8px}
+.rifa h3{
+margin:0 0 8px;
+}
 
 .rifaImage{
 display:block;
@@ -209,6 +241,7 @@ padding:6px 10px;
 border-radius:20px;
 font-size:11px;
 font-weight:900;
+white-space:nowrap;
 }
 
 .badge.on{
@@ -256,7 +289,9 @@ color:var(--blue);
 font-size:19px;
 }
 
-.stat small{color:var(--muted)}
+.stat small{
+color:var(--muted);
+}
 
 .actions{
 display:grid;
@@ -304,6 +339,355 @@ border:1px dashed #334361;
 border-radius:18px;
 }
 
+
+/* =========================
+   SOLICITUDES - CARTAS
+========================= */
+
+.requestCard{
+position:relative;
+margin-top:14px;
+padding:18px;
+border:1px solid #273654;
+border-radius:18px;
+background:
+linear-gradient(145deg,#0d1428,#080d19);
+cursor:pointer;
+transition:.2s;
+overflow:hidden;
+}
+
+.requestCard:hover{
+border-color:var(--blue);
+transform:translateY(-2px);
+box-shadow:0 12px 35px #0008;
+}
+
+.requestCard:active{
+transform:scale(.99);
+}
+
+.requestCard.pending{
+border-top:3px solid var(--gold);
+}
+
+.requestCard.accepted{
+border-top:3px solid var(--green);
+}
+
+.requestCard.rejected{
+border-top:3px solid var(--red);
+}
+
+.requestCardTop{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+}
+
+.requestPerson{
+min-width:0;
+}
+
+.requestPerson h3{
+margin:0 0 6px;
+font-size:20px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.requestPhone{
+color:var(--muted);
+font-size:14px;
+}
+
+.requestSummary{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:15px;
+}
+
+.requestMini{
+padding:10px;
+border-radius:11px;
+background:#11192b;
+}
+
+.requestMini small{
+display:block;
+color:var(--muted);
+font-size:11px;
+margin-bottom:4px;
+}
+
+.requestMini b{
+font-size:14px;
+}
+
+.requestHint{
+margin-top:13px;
+text-align:center;
+font-size:12px;
+color:var(--muted);
+}
+
+.requestHint span{
+color:var(--blue);
+font-weight:900;
+}
+
+
+/* =========================
+   DETALLE SOLICITUD
+========================= */
+
+.requestDetail{
+display:none;
+}
+
+.requestDetail.active{
+display:block;
+}
+
+.requestListView.hidden{
+display:none;
+}
+
+.backButton{
+width:100%;
+padding:13px;
+border:1px solid #304064;
+border-radius:13px;
+background:#0d1527;
+color:#fff;
+font-weight:900;
+margin-bottom:15px;
+}
+
+.detailCard{
+position:relative;
+overflow:hidden;
+padding:0;
+border:2px solid transparent;
+border-radius:28px;
+background:
+linear-gradient(#080d1c,#080d1c) padding-box,
+linear-gradient(135deg,var(--blue),#c800ff) border-box;
+box-shadow:0 20px 60px #0009;
+}
+
+.detailHeader{
+padding:28px 28px 25px;
+background:
+radial-gradient(circle at 100% 0%,#211357,transparent 40%),
+linear-gradient(135deg,#0d1428,#080d19);
+border-bottom:1px solid #293954;
+}
+
+.detailNameRow{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:15px;
+}
+
+.detailName{
+font-size:29px;
+font-weight:900;
+margin:0 0 10px;
+}
+
+.detailPhone{
+font-size:25px;
+color:#f4f7ff;
+letter-spacing:.5px;
+}
+
+.contactButtons{
+display:flex;
+gap:13px;
+margin-top:20px;
+}
+
+.contactBtn{
+width:58px;
+height:58px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+font-size:27px;
+border:2px solid;
+background:#080d19;
+}
+
+.contactBtn.whatsapp{
+color:#58df7e;
+border-color:#58df7e;
+}
+
+.contactBtn.call{
+color:var(--gold);
+border-color:var(--gold);
+}
+
+.detailBody{
+padding:28px;
+}
+
+.detailStatus{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:27px;
+}
+
+.detailLabel{
+font-size:24px;
+font-weight:900;
+}
+
+.detailInfo{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.detailRow{
+display:grid;
+grid-template-columns:auto 1fr;
+gap:12px;
+align-items:baseline;
+font-size:22px;
+}
+
+.detailRow strong{
+font-weight:900;
+}
+
+.detailRow span{
+color:#f5f5f7;
+word-break:break-word;
+}
+
+.detailNumbers{
+margin-top:30px;
+}
+
+.detailNumbersTitle{
+font-size:23px;
+font-weight:900;
+margin-bottom:14px;
+}
+
+.numbersBox{
+padding:17px;
+border-radius:15px;
+background:#0e1629;
+border:1px solid #263654;
+color:var(--blue);
+font-size:22px;
+font-weight:900;
+line-height:1.7;
+word-break:break-word;
+}
+
+
+/* =========================
+   COMPROBANTE
+========================= */
+
+.receiptBox{
+margin-top:28px;
+padding:18px;
+border:1px solid #293954;
+border-radius:17px;
+background:#080d18;
+}
+
+.receiptTitle{
+font-size:22px;
+font-weight:900;
+}
+
+.receiptImage{
+display:block;
+width:100%;
+max-height:600px;
+object-fit:contain;
+margin-top:15px;
+border-radius:13px;
+background:#000;
+border:1px solid #263654;
+}
+
+.receiptPdf{
+display:block;
+margin-top:14px;
+padding:15px;
+border:1px solid #304064;
+border-radius:12px;
+color:var(--blue);
+background:#0d1527;
+text-align:center;
+font-weight:900;
+text-decoration:none;
+}
+
+.receiptEmpty{
+margin-top:12px;
+padding:15px;
+border-radius:12px;
+background:#11192b;
+color:var(--muted);
+}
+
+
+/* =========================
+   BOTONES DETALLE
+========================= */
+
+.detailActions{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+margin-top:32px;
+padding-bottom:10px;
+}
+
+.detailAction{
+min-height:75px;
+border:3px solid;
+border-radius:24px;
+background:#080d19;
+font-size:23px;
+font-weight:900;
+}
+
+.detailAccept{
+color:#65df7d;
+border-color:#65df7d;
+}
+
+.detailReject{
+color:#ff3340;
+border-color:#ff3340;
+}
+
+.detailAction:disabled{
+opacity:.35;
+cursor:not-allowed;
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
 .success{
 display:none;
 margin-top:15px;
@@ -315,82 +699,94 @@ color:#6ff0aa;
 font-weight:bold;
 }
 
-.request{
-margin-top:14px;
-padding:18px;
-border:1px solid #293954;
-border-radius:18px;
-background:#0a101f;
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:600px){
+
+main{
+padding:18px 12px 50px;
 }
 
-.requestTop{
-display:flex;
-justify-content:space-between;
-gap:10px;
+header{
+padding:0 12px;
 }
 
-.requestInfo{
-margin-top:15px;
-padding:14px;
-border-radius:14px;
-background:#11192b;
-line-height:1.7;
-}
-
-.requestNumbers{
-color:var(--blue);
-font-weight:900;
-word-break:break-word;
-}
-
-.receiptBox{
-margin-top:15px;
-padding:14px;
-border:1px solid #293954;
-border-radius:15px;
-background:#080d18;
-}
-
-.receiptImage{
-display:block;
-width:100%;
-max-height:500px;
-object-fit:contain;
-margin-top:12px;
-border-radius:12px;
-background:#000;
-border:1px solid #263654;
-}
-
-.receiptPdf{
-display:block;
-margin-top:12px;
-padding:14px;
-border:1px solid #304064;
-border-radius:12px;
-color:var(--blue);
-background:#0d1527;
-text-align:center;
-font-weight:900;
-text-decoration:none;
-}
-
-@media(max-width:500px){
-main{padding:18px 12px 50px}
-header{padding:0 12px}
 .logo{
 font-size:13px;
 padding:9px 11px;
 }
-.stats{grid-template-columns:1fr}
-.actions{grid-template-columns:1fr}
-.rifaTop{flex-direction:column}
-.tabs{flex-wrap:wrap}
+
+.stats{
+grid-template-columns:1fr;
 }
+
+.actions{
+grid-template-columns:1fr;
+}
+
+.rifaTop{
+flex-direction:column;
+}
+
+.tabs{
+flex-wrap:wrap;
+}
+
+.tab{
+min-width:30%;
+}
+
+.detailHeader{
+padding:25px 20px;
+}
+
+.detailBody{
+padding:22px 20px;
+}
+
+.detailName{
+font-size:27px;
+}
+
+.detailPhone{
+font-size:21px;
+}
+
+.detailRow{
+grid-template-columns:1fr;
+gap:4px;
+font-size:21px;
+}
+
+.detailStatus{
+align-items:flex-start;
+flex-direction:column;
+}
+
+.detailActions{
+grid-template-columns:1fr;
+gap:13px;
+}
+
+.detailAction{
+min-height:68px;
+font-size:20px;
+}
+
+.numbersBox{
+font-size:19px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
+
 
 <header>
 
@@ -405,7 +801,11 @@ Cerrar sesión
 
 </header>
 
+
 <main>
+
+
+<!-- LOGIN -->
 
 <section id="loginBox" class="card login">
 
@@ -415,99 +815,208 @@ Cerrar sesión
 Inicia sesión para crear y administrar tus rifas.
 </p>
 
-<label>Correo electrónico</label>
+<label>
+Correo electrónico
+</label>
 
-<input id="email" type="email" placeholder="Correo electrónico">
+<input
+id="email"
+type="email"
+placeholder="Correo electrónico">
 
-<label>Contraseña</label>
+<label>
+Contraseña
+</label>
 
-<input id="pass" type="password" placeholder="Contraseña">
+<input
+id="pass"
+type="password"
+placeholder="Contraseña">
 
-<button class="btn primary" onclick="login()">
+<button
+class="btn primary"
+onclick="login()">
+
 ENTRAR AL PANEL
+
 </button>
 
-<div id="loginError" class="error"></div>
+<div
+id="loginError"
+class="error">
+</div>
 
 </section>
 
 
-<section id="adminPanel" class="panel">
+
+<!-- PANEL -->
+
+<section
+id="adminPanel"
+class="panel">
+
 
 <div class="tabs">
 
-<button id="tabCreate" class="tab active" onclick="showTab('create')">
+<button
+id="tabCreate"
+class="tab active"
+onclick="showTab('create')">
+
 ➕ Crear rifa
+
 </button>
 
-<button id="tabRifas" class="tab" onclick="showTab('rifas')">
+
+<button
+id="tabRifas"
+class="tab"
+onclick="showTab('rifas')">
+
 🎟 Mis rifas
+
 </button>
 
-<button id="tabRequests" class="tab" onclick="showTab('requests')">
+
+<button
+id="tabRequests"
+class="tab"
+onclick="showTab('requests')">
+
 📋 Solicitudes
+
 </button>
 
 </div>
 
 
-<div id="create" class="tabContent active">
+
+<!-- =========================
+     CREAR
+========================= -->
+
+<div
+id="create"
+class="tabContent active">
 
 <div class="card">
 
-<h2>🎟 Crear nueva rifa</h2>
+<h2>
+🎟 Crear nueva rifa
+</h2>
 
 <p class="muted">
 Configura los datos de la rifa que aparecerá
 en tu página.
 </p>
 
-<label>Nombre de la rifa *</label>
 
-<input id="rn" placeholder="Ej: iPhone 17 Pro Max">
+<label>
+Nombre de la rifa *
+</label>
 
-<label>Precio por boleto *</label>
+<input
+id="rn"
+placeholder="Ej: iPhone 17 Pro Max">
 
-<input id="rp" type="number" min="1" step="0.01" placeholder="Ej: 100">
 
-<label>Cantidad total de números *</label>
+<label>
+Precio por boleto *
+</label>
 
-<input id="rt" type="number" min="2" max="100000" placeholder="Ej: 1000">
+<input
+id="rp"
+type="number"
+min="1"
+step="0.01"
+placeholder="Ej: 100">
 
-<label>Fecha del sorteo *</label>
 
-<input id="rd" type="date">
+<label>
+Cantidad total de números *
+</label>
 
-<label>Foto de la rifa</label>
+<input
+id="rt"
+type="number"
+min="2"
+max="100000"
+placeholder="Ej: 1000">
 
-<input id="ri" type="file" accept="image/*">
 
-<div class="muted" style="margin-top:8px">
+<label>
+Fecha del sorteo *
+</label>
+
+<input
+id="rd"
+type="date">
+
+
+<label>
+Foto de la rifa
+</label>
+
+<input
+id="ri"
+type="file"
+accept="image/*">
+
+<div
+class="muted"
+style="margin-top:8px">
+
 Selecciona una imagen JPG, PNG o WEBP.
+
 </div>
 
-<label>Descripción</label>
 
-<textarea id="rx" placeholder="Describe el premio y las condiciones de la rifa..."></textarea>
+<label>
+Descripción
+</label>
 
-<button class="btn primary" onclick="createRaffle()">
+<textarea
+id="rx"
+placeholder="Describe el premio y las condiciones de la rifa..."></textarea>
+
+
+<button
+class="btn primary"
+onclick="createRaffle()">
+
 CREAR RIFA
+
 </button>
 
-<div id="success" class="success">
+
+<div
+id="success"
+class="success">
+
 ✓ Rifa creada correctamente.
-</div>
 
 </div>
 
 </div>
 
+</div>
 
-<div id="rifas" class="tabContent">
+
+
+<!-- =========================
+     MIS RIFAS
+========================= -->
+
+<div
+id="rifas"
+class="tabContent">
 
 <div class="card">
 
-<h2>🎟 Mis rifas</h2>
+<h2>
+🎟 Mis rifas
+</h2>
 
 <p class="muted">
 Aquí puedes activar, desactivar o eliminar tus rifas.
@@ -520,28 +1029,73 @@ Aquí puedes activar, desactivar o eliminar tus rifas.
 </div>
 
 
-<div id="requests" class="tabContent">
 
-<div class="card">
+<!-- =========================
+     SOLICITUDES
+========================= -->
 
-<h2>📋 Solicitudes de compra</h2>
+<div
+id="requests"
+class="tabContent">
+
+
+<!-- LISTA -->
+
+<div
+id="requestListView"
+class="card requestListView">
+
+<h2>
+📋 Solicitudes de compra
+</h2>
 
 <p class="muted">
-Aquí aparecen las solicitudes enviadas desde la página pública.
+Toca una solicitud para ver toda la información.
 </p>
 
 <div id="requestList"></div>
 
 </div>
 
+
+<!-- DETALLE -->
+
+<div
+id="requestDetail"
+class="requestDetail">
+
+<button
+class="backButton"
+onclick="closeRequestDetail()">
+
+← VOLVER A SOLICITUDES
+
+</button>
+
+
+<div
+id="requestDetailContent">
+
 </div>
+
+</div>
+
+
+</div>
+
 
 </section>
 
 </main>
 
 
+
 <script>
+
+
+/* =========================
+   CONFIGURACIÓN
+========================= */
 
 const R='rlrd_raffles';
 const Q='rlrd_requests';
@@ -551,12 +1105,23 @@ const EMAIL='Kleinel1995@gmail.com';
 const PASSWORD='@Kleinel1995';
 
 
+
+/* =========================
+   STORAGE
+========================= */
+
 function get(key,defaultValue=[]){
 
 try{
-return JSON.parse(localStorage.getItem(key)) || defaultValue;
+
+return JSON.parse(
+localStorage.getItem(key)
+) || defaultValue;
+
 }catch(e){
+
 return defaultValue;
+
 }
 
 }
@@ -564,30 +1129,49 @@ return defaultValue;
 
 function put(key,value){
 
-localStorage.setItem(key,JSON.stringify(value));
+localStorage.setItem(
+key,
+JSON.stringify(value)
+);
 
 }
 
 
-/* LOGIN */
+
+/* =========================
+   LOGIN
+========================= */
 
 function login(){
 
-const email=document.getElementById('email').value.trim();
-const pass=document.getElementById('pass').value;
-const error=document.getElementById('loginError');
+const email=
+document.getElementById('email')
+.value.trim();
+
+const pass=
+document.getElementById('pass')
+.value;
+
+const error=
+document.getElementById('loginError');
+
 
 if(
 email.toLowerCase()===EMAIL.toLowerCase() &&
 pass===PASSWORD
 ){
 
-sessionStorage.setItem(SESSION,'1');
+sessionStorage.setItem(
+SESSION,
+'1'
+);
+
 showPanel();
 
 }else{
 
-error.textContent='Correo o contraseña incorrectos.';
+error.textContent=
+'Correo o contraseña incorrectos.';
 
 }
 
@@ -597,54 +1181,93 @@ error.textContent='Correo o contraseña incorrectos.';
 function logout(){
 
 sessionStorage.removeItem(SESSION);
+
 location.reload();
 
 }
 
 
-/* PANEL */
+
+/* =========================
+   PANEL
+========================= */
 
 function showPanel(){
 
-document.getElementById('loginBox').style.display='none';
-document.getElementById('adminPanel').style.display='block';
+document.getElementById(
+'loginBox'
+).style.display='none';
+
+document.getElementById(
+'adminPanel'
+).style.display='block';
 
 renderRaffles();
+
 renderRequests();
 
 }
 
 
-/* TABS */
+
+/* =========================
+   TABS
+========================= */
 
 function showTab(tab){
 
-document.querySelectorAll('.tab')
-.forEach(x=>x.classList.remove('active'));
+document
+.querySelectorAll('.tab')
+.forEach(x=>
+x.classList.remove('active')
+);
 
-document.querySelectorAll('.tabContent')
-.forEach(x=>x.classList.remove('active'));
+document
+.querySelectorAll('.tabContent')
+.forEach(x=>
+x.classList.remove('active')
+);
+
 
 if(tab==='create'){
 
-document.getElementById('tabCreate').classList.add('active');
-document.getElementById('create').classList.add('active');
+document
+.getElementById('tabCreate')
+.classList.add('active');
+
+document
+.getElementById('create')
+.classList.add('active');
 
 }
 
+
 if(tab==='rifas'){
 
-document.getElementById('tabRifas').classList.add('active');
-document.getElementById('rifas').classList.add('active');
+document
+.getElementById('tabRifas')
+.classList.add('active');
+
+document
+.getElementById('rifas')
+.classList.add('active');
 
 renderRaffles();
 
 }
 
+
 if(tab==='requests'){
 
-document.getElementById('tabRequests').classList.add('active');
-document.getElementById('requests').classList.add('active');
+document
+.getElementById('tabRequests')
+.classList.add('active');
+
+document
+.getElementById('requests')
+.classList.add('active');
+
+closeRequestDetail();
 
 renderRequests();
 
@@ -653,57 +1276,125 @@ renderRequests();
 }
 
 
-/* CREAR RIFA */
+
+/* =========================
+   CREAR RIFA
+========================= */
 
 function createRaffle(){
 
-const name=document.getElementById('rn').value.trim();
-const price=Number(document.getElementById('rp').value);
-const total=Number(document.getElementById('rt').value);
-const date=document.getElementById('rd').value;
-const description=document.getElementById('rx').value.trim();
-const imageFile=document.getElementById('ri').files[0];
+const name=
+document.getElementById('rn')
+.value.trim();
+
+const price=
+Number(
+document.getElementById('rp').value
+);
+
+const total=
+Number(
+document.getElementById('rt').value
+);
+
+const date=
+document.getElementById('rd').value;
+
+const description=
+document.getElementById('rx')
+.value.trim();
+
+const imageFile=
+document.getElementById('ri')
+.files[0];
 
 
 if(!name){
-alert('Escribe el nombre de la rifa.');
+
+alert(
+'Escribe el nombre de la rifa.'
+);
+
 return;
+
 }
+
 
 if(!price || price<=0){
-alert('Escribe un precio válido.');
+
+alert(
+'Escribe un precio válido.'
+);
+
 return;
+
 }
+
 
 if(!total || total<2){
-alert('La cantidad de números debe ser mínimo 2.');
+
+alert(
+'La cantidad de números debe ser mínimo 2.'
+);
+
 return;
+
 }
+
 
 if(total>100000){
-alert('El máximo permitido es 100,000 números.');
+
+alert(
+'El máximo permitido es 100,000 números.'
+);
+
 return;
+
 }
 
+
 if(!date){
-alert('Selecciona la fecha del sorteo.');
+
+alert(
+'Selecciona la fecha del sorteo.'
+);
+
 return;
+
 }
 
 
 if(imageFile){
 
-if(!imageFile.type.startsWith('image/')){
-alert('Selecciona una imagen válida.');
+if(
+!imageFile.type.startsWith('image/')
+){
+
+alert(
+'Selecciona una imagen válida.'
+);
+
 return;
+
 }
 
-if(imageFile.size>4*1024*1024){
-alert('La imagen debe pesar menos de 4 MB.');
+
+if(
+imageFile.size>4*1024*1024
+){
+
+alert(
+'La imagen debe pesar menos de 4 MB.'
+);
+
 return;
+
 }
 
-const reader=new FileReader();
+
+const reader=
+new FileReader();
+
 
 reader.onload=function(){
 
@@ -718,7 +1409,9 @@ reader.result
 
 };
 
+
 reader.readAsDataURL(imageFile);
+
 
 }else{
 
@@ -736,6 +1429,7 @@ description,
 }
 
 
+
 function saveRaffle(
 name,
 price,
@@ -745,11 +1439,14 @@ description,
 image
 ){
 
-const raffles=get(R,[]);
+const raffles=
+get(R,[]);
+
 
 raffles.push({
 
-id:'RIFA-'+Date.now(),
+id:
+'RIFA-'+Date.now(),
 
 name:name,
 
@@ -767,7 +1464,8 @@ active:true,
 
 sold:[],
 
-createdAt:new Date().toISOString()
+createdAt:
+new Date().toISOString()
 
 });
 
@@ -778,13 +1476,19 @@ put(R,raffles);
 
 }catch(e){
 
-alert('No se pudo guardar. La imagen puede ser demasiado grande.');
+alert(
+'No se pudo guardar. La imagen puede ser demasiado grande.'
+);
+
 return;
 
 }
 
 
-document.getElementById('success').style.display='block';
+document
+.getElementById('success')
+.style.display='block';
+
 
 document.getElementById('rn').value='';
 document.getElementById('rp').value='';
@@ -796,7 +1500,9 @@ document.getElementById('ri').value='';
 
 setTimeout(()=>{
 
-document.getElementById('success').style.display='none';
+document
+.getElementById('success')
+.style.display='none';
 
 },3000);
 
@@ -806,16 +1512,28 @@ renderRaffles();
 }
 
 
-/* ACTIVAR */
+
+/* =========================
+   ACTIVAR / DESACTIVAR
+========================= */
 
 function toggleRaffle(id){
 
-const raffles=get(R,[]);
-const raffle=raffles.find(x=>x.id===id);
+const raffles=
+get(R,[]);
+
+const raffle=
+raffles.find(
+x=>x.id===id
+);
+
 
 if(!raffle)return;
 
-raffle.active=!raffle.active;
+
+raffle.active=
+!raffle.active;
+
 
 put(R,raffles);
 
@@ -824,14 +1542,24 @@ renderRaffles();
 }
 
 
-/* ELIMINAR */
+
+/* =========================
+   ELIMINAR
+========================= */
 
 function deleteRaffle(id){
 
-const raffles=get(R,[]);
-const raffle=raffles.find(x=>x.id===id);
+const raffles=
+get(R,[]);
+
+const raffle=
+raffles.find(
+x=>x.id===id
+);
+
 
 if(!raffle)return;
+
 
 if(!confirm(
 '¿Seguro que quieres eliminar la rifa "'+
@@ -839,22 +1567,30 @@ raffle.name+
 '"?'
 ))return;
 
+
 put(
 R,
-raffles.filter(x=>x.id!==id)
+raffles.filter(
+x=>x.id!==id
+)
 );
+
 
 renderRaffles();
 
 }
 
 
-/* DINERO */
+
+/* =========================
+   DINERO
+========================= */
 
 function money(value){
 
 return 'RD$ '+
-Number(value||0).toLocaleString(
+Number(value||0)
+.toLocaleString(
 'en-US',
 {
 minimumFractionDigits:2,
@@ -865,12 +1601,37 @@ maximumFractionDigits:2
 }
 
 
-/* RIFAS */
+
+/* =========================
+   ESCAPAR HTML
+========================= */
+
+function escapeHtml(value){
+
+return String(value||'')
+.replaceAll('&','&amp;')
+.replaceAll('<','&lt;')
+.replaceAll('>','&gt;')
+.replaceAll('"','&quot;')
+.replaceAll("'","&#039;");
+
+}
+
+
+
+/* =========================
+   RIFAS
+========================= */
 
 function renderRaffles(){
 
-const list=document.getElementById('raffleList');
-const raffles=get(R,[]);
+const list=
+document.getElementById(
+'raffleList'
+);
+
+const raffles=
+get(R,[]);
 
 
 if(!raffles.length){
@@ -885,17 +1646,30 @@ return;
 
 list.innerHTML=
 
-raffles.slice().reverse().map(r=>{
+raffles
+.slice()
+.reverse()
+.map(r=>{
 
-const sold=Array.isArray(r.sold)?r.sold.length:0;
+const sold=
+Array.isArray(r.sold)
+?r.sold.length
+:0;
 
-const available=Math.max(
+
+const available=
+Math.max(
 0,
 Number(r.totalNumbers)-sold
 );
 
-const percentage=r.totalNumbers
-?Math.round(sold/r.totalNumbers*100)
+
+const percentage=
+r.totalNumbers
+?
+Math.round(
+sold/r.totalNumbers*100
+)
 :0;
 
 
@@ -904,30 +1678,47 @@ return `
 <div class="rifa">
 
 ${r.image?`
+
 <img
 class="rifaImage"
 src="${r.image}"
 alt="${escapeHtml(r.name)}">
+
 `:''}
+
 
 <div class="rifaTop">
 
 <div>
 
-<h3>${escapeHtml(r.name)}</h3>
+<h3>
+${escapeHtml(r.name)}
+</h3>
 
 <div class="muted">
-${escapeHtml(r.description||'Sin descripción')}
+${escapeHtml(
+r.description||
+'Sin descripción'
+)}
 </div>
 
-<div class="muted" style="margin-top:7px">
-Sorteo: ${escapeHtml(r.date||'')}
-</div>
+<div
+class="muted"
+style="margin-top:7px">
+
+Sorteo:
+${escapeHtml(r.date||'')}
 
 </div>
 
-<span class="badge ${r.active?'on':'off'}">
+</div>
+
+
+<span
+class="badge ${r.active?'on':'off'}">
+
 ${r.active?'ACTIVA':'INACTIVA'}
+
 </span>
 
 </div>
@@ -936,24 +1727,49 @@ ${r.active?'ACTIVA':'INACTIVA'}
 <div class="stats">
 
 <div class="stat">
-<b>${money(r.price)}</b>
-<small>Precio</small>
+
+<b>
+${money(r.price)}
+</b>
+
+<small>
+Precio
+</small>
+
 </div>
+
 
 <div class="stat">
-<b>${r.totalNumbers}</b>
-<small>Números</small>
+
+<b>
+${r.totalNumbers}
+</b>
+
+<small>
+Números
+</small>
+
 </div>
+
 
 <div class="stat">
-<b>${sold}</b>
-<small>Vendidos</small>
-</div>
+
+<b>
+${sold}
+</b>
+
+<small>
+Vendidos
+</small>
 
 </div>
 
+</div>
 
-<div class="muted" style="margin-top:12px">
+
+<div
+class="muted"
+style="margin-top:12px">
 
 Disponibles:
 <b>${available}</b>
@@ -966,15 +1782,27 @@ Disponibles:
 
 <div class="actions">
 
-<button class="action" onclick="toggleRaffle('${r.id}')">
-${r.active?'⏸ Desactivar':'▶ Activar'}
+<button
+class="action"
+onclick="toggleRaffle('${r.id}')">
+
+${r.active
+?'⏸ Desactivar'
+:'▶ Activar'}
+
 </button>
 
-<button class="action delete" onclick="deleteRaffle('${r.id}')">
+
+<button
+class="action delete"
+onclick="deleteRaffle('${r.id}')">
+
 🗑 Eliminar
+
 </button>
 
 </div>
+
 
 </div>
 
@@ -985,12 +1813,20 @@ ${r.active?'⏸ Desactivar':'▶ Activar'}
 }
 
 
-/* SOLICITUDES */
+
+/* =========================================================
+   SOLICITUDES
+========================================================= */
 
 function renderRequests(){
 
-const list=document.getElementById('requestList');
-const requests=get(Q,[]);
+const list=
+document.getElementById(
+'requestList'
+);
+
+const requests=
+get(Q,[]);
 
 
 if(!requests.length){
@@ -1003,11 +1839,21 @@ return;
 }
 
 
+/*
+   Aquí se muestran solamente las cartas.
+   Al tocar una carta se abre el detalle.
+*/
+
 list.innerHTML=
 
-requests.slice().reverse().map(q=>{
+requests
+.slice()
+.reverse()
+.map(q=>{
 
-const status=q.status||'pending';
+const status=
+q.status||'pending';
+
 
 const statusText=
 status==='accepted'
@@ -1017,10 +1863,210 @@ status==='rejected'
 'PENDIENTE';
 
 
-const phoneClean=
-String(q.phone||'').replace(/\D/g,'');
+return `
 
-let whatsappPhone=phoneClean;
+<div
+class="requestCard ${status}"
+onclick="openRequestDetail('${q.id}')">
+
+
+<div class="requestCardTop">
+
+<div class="requestPerson">
+
+<h3>
+${escapeHtml(q.name||'Sin nombre')}
+</h3>
+
+<div class="requestPhone">
+${escapeHtml(q.phone||'Sin teléfono')}
+</div>
+
+</div>
+
+
+<span
+class="badge ${status}">
+
+${statusText}
+
+</span>
+
+</div>
+
+
+<div class="requestSummary">
+
+
+<div class="requestMini">
+
+<small>
+RIFA
+</small>
+
+<b>
+${escapeHtml(q.raffleName||'Sin rifa')}
+</b>
+
+</div>
+
+
+<div class="requestMini">
+
+<small>
+CANTIDAD
+</small>
+
+<b>
+${q.count||0} boletos
+</b>
+
+</div>
+
+
+<div class="requestMini">
+
+<small>
+TOTAL
+</small>
+
+<b>
+${money(q.total)}
+</b>
+
+</div>
+
+
+<div class="requestMini">
+
+<small>
+BANCO
+</small>
+
+<b>
+${escapeHtml(q.bank||'')}
+</b>
+
+</div>
+
+
+</div>
+
+
+<div class="requestHint">
+
+Toca para ver la información completa
+<span>→</span>
+
+</div>
+
+
+</div>
+
+`;
+
+}).join('');
+
+}
+
+
+
+/* =========================================================
+   ABRIR DETALLE
+========================================================= */
+
+function openRequestDetail(id){
+
+const requests=
+get(Q,[]);
+
+
+const request=
+requests.find(
+x=>String(x.id)===String(id)
+);
+
+
+if(!request){
+
+alert(
+'La solicitud ya no existe.'
+);
+
+renderRequests();
+
+return;
+
+}
+
+
+const listView=
+document.getElementById(
+'requestListView'
+);
+
+const detail=
+document.getElementById(
+'requestDetail'
+);
+
+
+listView.classList.add('hidden');
+
+detail.classList.add('active');
+
+
+renderRequestDetail(request);
+
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+
+/* =========================================================
+   DETALLE COMPLETO
+========================================================= */
+
+function renderRequestDetail(q){
+
+const container=
+document.getElementById(
+'requestDetailContent'
+);
+
+
+const status=
+q.status||'pending';
+
+
+const statusText=
+status==='accepted'
+?'ACEPTADA':
+status==='rejected'
+?'RECHAZADA':
+'PENDIENTE';
+
+
+/* TELÉFONO */
+
+const phoneClean=
+String(q.phone||'')
+.replace(/\D/g,'');
+
+
+let whatsappPhone=
+phoneClean;
+
+
+/*
+   Si es un teléfono dominicano de 10 dígitos,
+   agregamos el código +1 para WhatsApp.
+*/
 
 if(
 whatsappPhone.length===10 &&
@@ -1036,93 +2082,70 @@ whatsappPhone='1'+whatsappPhone;
 }
 
 
-const whatsappMessage=encodeURIComponent(
-'Hola '+(q.name||'')+
+const whatsappMessage=
+encodeURIComponent(
+'Hola '+
+(q.name||'')+
 ', te contacto de Rifas Luxury RD sobre tu solicitud de compra de '+
-(q.raffleName||'')+'.'
+(q.raffleName||'')+
+'.'
 );
 
 
-return `
+/* NÚMEROS */
 
-<div class="request">
-
-<div class="requestTop">
-
-<div>
-
-<h3 style="margin:0">
-${escapeHtml(q.name)}
-</h3>
-
-<div class="muted">
-${escapeHtml(q.phone||'')}
-</div>
-
-</div>
-
-<span class="badge ${status}">
-${statusText}
-</span>
-
-</div>
-
-
-<div class="requestInfo">
-
-<b>Rifa:</b>
-${escapeHtml(q.raffleName||'')}
-
-<br>
-
-<b>Cantidad:</b>
-${q.count||0}
-
-<br>
-
-<b>Total:</b>
-${money(q.total)}
-
-<br>
-
-<b>Banco:</b>
-${escapeHtml(q.bank||'')}
-
-<br>
-
-<b>Fecha:</b>
-${escapeHtml(q.createdAt||'')}
-
-${q.email?`
-<br>
-<b>Correo:</b>
-${escapeHtml(q.email)}
-`:''}
-
-<br><br>
-
-<b>Números:</b>
-
-<div class="requestNumbers">
-${
+const numbers=
 Array.isArray(q.numbers)
-?q.numbers.join(', ')
-:''
-}
-</div>
-
-</div>
+?q.numbers
+:[];
 
 
-<div class="receiptBox">
+/* FECHA */
 
-<b>🧾 Comprobante de pago</b>
+const dateText=
+q.createdAt||
+'No disponible';
 
-${
-q.receiptData
-?
-`
-<a href="${q.receiptData}" target="_blank">
+
+/* COMPROBANTE */
+
+let receiptHTML='';
+
+
+if(q.receiptData){
+
+/*
+   Si el archivo es PDF, mostramos botón.
+   Si es imagen, mostramos imagen.
+*/
+
+if(
+q.receiptType==='application/pdf' ||
+String(q.fileName||'')
+.toLowerCase()
+.endsWith('.pdf')
+){
+
+receiptHTML=`
+
+<a
+class="receiptPdf"
+href="${q.receiptData}"
+target="_blank">
+
+📄 ABRIR COMPROBANTE PDF
+
+</a>
+
+`;
+
+}else{
+
+receiptHTML=`
+
+<a
+href="${q.receiptData}"
+target="_blank">
 
 <img
 class="receiptImage"
@@ -1131,158 +2154,536 @@ alt="Comprobante de pago">
 
 </a>
 
-<div class="muted" style="margin-top:8px">
-Toca la imagen para verla completa.
+<div
+class="muted"
+style="margin-top:8px">
+
+Toca el comprobante para verlo completo.
+
 </div>
-`
-:
-`
-<div class="muted" style="margin-top:10px">
+
+`;
+
+}
+
+}else{
+
+receiptHTML=`
+
+<div class="receiptEmpty">
+
 No hay comprobante visual disponible.
-<br>
+
 ${q.fileName
-?'Archivo: '+escapeHtml(q.fileName)
-:'No se recibió archivo.'}
+?`<br>Archivo: ${escapeHtml(q.fileName)}`
+:'<br>No se recibió archivo.'}
+
 </div>
-`
+
+`;
+
 }
 
-</div>
+
+/* BOTONES DE CONTACTO */
+
+let contactHTML='';
 
 
-<div class="actions">
+if(phoneClean){
 
-${
-phoneClean
-?
-`
+contactHTML=`
+
+<div class="contactButtons">
+
+
 <a
-class="action whatsapp"
+class="contactBtn whatsapp"
 href="https://wa.me/${whatsappPhone}?text=${whatsappMessage}"
-target="_blank">
+target="_blank"
+title="WhatsApp">
 
-💬 WhatsApp
+💬
 
 </a>
+
 
 <a
-class="action call"
-href="tel:${phoneClean}">
+class="contactBtn call"
+href="tel:${phoneClean}"
+title="Llamar">
 
-📞 Llamar
+📞
 
 </a>
-`
-:
-`
-<button class="action" disabled>
-📱 Sin teléfono
-</button>
-`
-}
-
-</div>
-
-
-${status==='pending'?`
-
-<div class="actions">
-
-<button
-class="action accept"
-onclick="acceptRequest('${q.id}')">
-
-✓ ACEPTAR Y VENDER
-
-</button>
-
-<button
-class="action delete"
-onclick="rejectRequest('${q.id}')">
-
-✕ RECHAZAR
-
-</button>
-
-</div>
-
-`:''}
-
-
-${
-status==='accepted' &&
-Array.isArray(q.numbers)
-?
-`
-<div class="muted" style="margin-top:12px">
-
-✓ Números vendidos:
-
-<span class="requestNumbers">
-${q.numbers.join(', ')}
-</span>
-
-</div>
-`
-:''
-}
 
 
 </div>
 
 `;
 
-}).join('');
+}
+
+
+/* BOTONES DE PROCESAMIENTO */
+
+let processButtons='';
+
+
+if(status==='pending'){
+
+processButtons=`
+
+<div class="detailActions">
+
+
+<button
+class="detailAction detailAccept"
+onclick="acceptRequest('${q.id}')">
+
+✓ ACEPTAR Y VENDER
+
+</button>
+
+
+<button
+class="detailAction detailReject"
+onclick="rejectRequest('${q.id}')">
+
+✕ RECHAZAR
+
+</button>
+
+
+</div>
+
+`;
+
+}else if(status==='accepted'){
+
+processButtons=`
+
+<div
+style="
+margin-top:30px;
+padding:18px;
+border:1px solid #286c4b;
+border-radius:16px;
+background:#092318;
+color:#6ff0aa;
+font-weight:900;
+text-align:center;
+">
+
+✓ ESTA SOLICITUD YA FUE ACEPTADA
+
+</div>
+
+`;
+
+}else{
+
+processButtons=`
+
+<div
+style="
+margin-top:30px;
+padding:18px;
+border:1px solid #693342;
+border-radius:16px;
+background:#211017;
+color:#ff7184;
+font-weight:900;
+text-align:center;
+">
+
+✕ ESTA SOLICITUD FUE RECHAZADA
+
+</div>
+
+`;
 
 }
 
 
-/* ACEPTAR */
+container.innerHTML=`
+
+<div class="detailCard">
+
+
+<!-- CABECERA -->
+
+<div class="detailHeader">
+
+
+<div class="detailNameRow">
+
+<div>
+
+<div class="detailName">
+
+${escapeHtml(
+q.name||'Sin nombre'
+)}
+
+</div>
+
+
+<div class="detailPhone">
+
+${escapeHtml(
+q.phone||'Sin teléfono'
+)}
+
+</div>
+
+
+${contactHTML}
+
+</div>
+
+
+<span
+class="badge ${status}"
+style="font-size:14px;padding:9px 14px">
+
+${statusText}
+
+</span>
+
+
+</div>
+
+</div>
+
+
+
+<!-- CUERPO -->
+
+<div class="detailBody">
+
+
+<!-- ESTADO -->
+
+<div class="detailStatus">
+
+<div class="detailLabel">
+Estado:
+</div>
+
+<span
+class="badge ${status}"
+style="font-size:14px;padding:9px 15px">
+
+${statusText}
+
+</span>
+
+</div>
+
+
+
+<!-- INFORMACIÓN -->
+
+<div class="detailInfo">
+
+
+<div class="detailRow">
+
+<strong>
+Rifa:
+</strong>
+
+<span>
+${escapeHtml(
+q.raffleName||'Sin rifa'
+)}
+</span>
+
+</div>
+
+
+<div class="detailRow">
+
+<strong>
+Cantidad:
+</strong>
+
+<span>
+${q.count||0}
+</span>
+
+</div>
+
+
+<div class="detailRow">
+
+<strong>
+Total:
+</strong>
+
+<span>
+${money(q.total)}
+</span>
+
+</div>
+
+
+<div class="detailRow">
+
+<strong>
+Forma de pago:
+</strong>
+
+<span>
+${escapeHtml(
+q.bank||'No especificado'
+)}
+</span>
+
+</div>
+
+
+${q.account?`
+
+<div class="detailRow">
+
+<strong>
+Cuenta:
+</strong>
+
+<span>
+${escapeHtml(q.account)}
+</span>
+
+</div>
+
+`:''}
+
+
+${q.holder?`
+
+<div class="detailRow">
+
+<strong>
+Titular:
+</strong>
+
+<span>
+${escapeHtml(q.holder)}
+</span>
+
+</div>
+
+`:''}
+
+
+<div class="detailRow">
+
+<strong>
+Fecha:
+</strong>
+
+<span>
+${escapeHtml(dateText)}
+</span>
+
+</div>
+
+
+${q.email?`
+
+<div class="detailRow">
+
+<strong>
+Correo:
+</strong>
+
+<span>
+${escapeHtml(q.email)}
+</span>
+
+</div>
+
+`:''}
+
+
+</div>
+
+
+
+<!-- NÚMEROS -->
+
+<div class="detailNumbers">
+
+<div class="detailNumbersTitle">
+
+Números:
+
+</div>
+
+
+<div class="numbersBox">
+
+${
+numbers.length
+?
+numbers.join(', ')
+:
+'No hay números asignados'
+}
+
+</div>
+
+</div>
+
+
+
+<!-- COMPROBANTE -->
+
+<div class="receiptBox">
+
+<div class="receiptTitle">
+
+🧾 Comprobante de pago
+
+</div>
+
+
+${receiptHTML}
+
+</div>
+
+
+
+<!-- BOTONES -->
+
+${processButtons}
+
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+
+/* =========================================================
+   CERRAR DETALLE
+========================================================= */
+
+function closeRequestDetail(){
+
+const listView=
+document.getElementById(
+'requestListView'
+);
+
+const detail=
+document.getElementById(
+'requestDetail'
+);
+
+
+if(listView){
+
+listView.classList.remove('hidden');
+
+}
+
+
+if(detail){
+
+detail.classList.remove('active');
+
+}
+
+}
+
+
+
+/* =========================================================
+   ACEPTAR SOLICITUD
+========================================================= */
 
 function acceptRequest(id){
 
-const requests=get(Q,[]);
-const request=requests.find(x=>x.id===id);
+const requests=
+get(Q,[]);
+
+
+const request=
+requests.find(
+x=>x.id===id
+);
+
 
 if(!request)return;
 
+
 if(request.status!=='pending'){
 
-alert('Esta solicitud ya fue procesada.');
+alert(
+'Esta solicitud ya fue procesada.'
+);
+
 return;
 
 }
 
 
-const raffles=get(R,[]);
-const raffle=raffles.find(x=>x.id===request.raffleId);
+const raffles=
+get(R,[]);
+
+
+const raffle=
+raffles.find(
+x=>x.id===request.raffleId
+);
+
 
 if(!raffle){
 
-alert('La rifa ya no existe.');
+alert(
+'La rifa ya no existe.'
+);
+
 return;
 
 }
 
 
-const sold=Array.isArray(raffle.sold)
+const sold=
+Array.isArray(raffle.sold)
 ?raffle.sold.map(Number)
 :[];
 
-const numbers=Array.isArray(request.numbers)
+
+const numbers=
+Array.isArray(request.numbers)
 ?request.numbers.map(Number)
 :[];
 
 
 if(!numbers.length){
 
-alert('Esta solicitud no tiene números asignados.');
+alert(
+'Esta solicitud no tiene números asignados.'
+);
+
 return;
 
 }
 
 
-const conflict=numbers.some(n=>sold.includes(n));
+const conflict=
+numbers.some(
+n=>sold.includes(n)
+);
+
 
 if(conflict){
 
@@ -1300,11 +2701,16 @@ sold.length+numbers.length>
 Number(raffle.totalNumbers)
 ){
 
-alert('No hay suficientes números disponibles.');
+alert(
+'No hay suficientes números disponibles.'
+);
+
 return;
 
 }
 
+
+/* MARCAR NÚMEROS COMO VENDIDOS */
 
 raffle.sold=[
 ...sold,
@@ -1312,17 +2718,40 @@ raffle.sold=[
 ];
 
 
-request.status='accepted';
+request.status=
+'accepted';
+
 
 request.acceptedAt=
-new Date().toLocaleString('es-DO');
+new Date().toLocaleString(
+'es-DO'
+);
 
 
 put(R,raffles);
+
 put(Q,requests);
 
+
 renderRaffles();
+
 renderRequests();
+
+
+/*
+   Volvemos a cargar el detalle actualizado.
+*/
+
+const updated=
+requests.find(
+x=>x.id===id
+);
+
+if(updated){
+
+renderRequestDetail(updated);
+
+}
 
 
 alert(
@@ -1332,18 +2761,32 @@ alert(
 }
 
 
-/* RECHAZAR */
+
+/* =========================================================
+   RECHAZAR
+========================================================= */
 
 function rejectRequest(id){
 
-const requests=get(Q,[]);
-const request=requests.find(x=>x.id===id);
+const requests=
+get(Q,[]);
+
+
+const request=
+requests.find(
+x=>x.id===id
+);
+
 
 if(!request)return;
 
+
 if(request.status!=='pending'){
 
-alert('Esta solicitud ya fue procesada.');
+alert(
+'Esta solicitud ya fue procesada.'
+);
+
 return;
 
 }
@@ -1354,36 +2797,50 @@ if(!confirm(
 ))return;
 
 
-request.status='rejected';
+request.status=
+'rejected';
+
 
 request.rejectedAt=
-new Date().toLocaleString('es-DO');
+new Date().toLocaleString(
+'es-DO'
+);
 
 
 put(Q,requests);
 
+
 renderRequests();
 
-}
+
+const updated=
+requests.find(
+x=>x.id===id
+);
 
 
-/* SEGURIDAD */
+if(updated){
 
-function escapeHtml(value){
-
-return String(value||'')
-.replaceAll('&','&amp;')
-.replaceAll('<','&lt;')
-.replaceAll('>','&gt;')
-.replaceAll('"','&quot;')
-.replaceAll("'","&#039;");
+renderRequestDetail(updated);
 
 }
 
 
-/* INICIO */
+alert(
+'La solicitud fue rechazada.'
+);
 
-if(sessionStorage.getItem(SESSION)==='1'){
+}
+
+
+
+/* =========================================================
+   INICIO
+========================================================= */
+
+if(
+sessionStorage.getItem(SESSION)==='1'
+){
 
 showPanel();
 
