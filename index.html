@@ -18,11 +18,16 @@ box-sizing:border-box;
 --line:#263654;
 --blue:#42e8ff;
 --purple:#8b5cf6;
+--pink:#d946ef;
 --gold:#ffd84d;
 --green:#22d47a;
---red:#ff4d67;
+--red:#ff3340;
 --text:#fff;
 --muted:#8994ae;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -30,6 +35,7 @@ margin:0;
 min-height:100vh;
 color:var(--text);
 font-family:Arial,Helvetica,sans-serif;
+
 background:
 radial-gradient(circle at 10% 0%,#17255a 0,transparent 32%),
 radial-gradient(circle at 90% 10%,#35145b 0,transparent 28%),
@@ -48,54 +54,89 @@ cursor:pointer;
 
 header{
 height:72px;
+
 display:flex;
 align-items:center;
 justify-content:space-between;
+
 padding:0 18px;
+
 border-bottom:1px solid #263352;
+
 background:#050816ee;
+
 backdrop-filter:blur(20px);
+
+position:sticky;
+top:0;
+z-index:50;
 }
 
 .logo{
 padding:10px 16px;
+
 border:1px solid #34446e;
 border-radius:30px;
+
 background:#0b1124;
+
 font-weight:900;
 letter-spacing:.8px;
 }
 
 .logo span{
 margin-left:5px;
+
 padding:5px 8px;
+
 border-radius:8px;
+
 color:#071020;
-background:linear-gradient(135deg,var(--blue),#9b7bff);
+
+background:
+linear-gradient(
+135deg,
+var(--blue),
+#9b7bff
+);
 }
 
 .logout{
 padding:11px 15px;
+
 border:1px solid #304064;
 border-radius:12px;
+
 background:#0d1426;
 color:#fff;
+
 font-weight:800;
 }
 
 main{
 width:100%;
 max-width:850px;
+
 margin:auto;
+
 padding:25px 15px 70px;
 }
 
 .card{
 margin-bottom:20px;
+
 padding:23px;
+
 border:1px solid #273654;
 border-radius:25px;
-background:linear-gradient(180deg,#0c1325,#070b16);
+
+background:
+linear-gradient(
+180deg,
+#0c1325,
+#070b16
+);
+
 box-shadow:0 20px 60px #0009;
 }
 
@@ -120,19 +161,26 @@ line-height:1.5;
 
 label{
 display:block;
+
 margin:17px 0 8px;
+
 font-weight:800;
 }
 
 input,
 textarea{
 width:100%;
+
 padding:15px;
+
 border:1px solid #2c3954;
 border-radius:13px;
+
 outline:none;
+
 background:#080d18;
 color:#fff;
+
 font-size:16px;
 }
 
@@ -144,28 +192,44 @@ resize:vertical;
 input:focus,
 textarea:focus{
 border-color:var(--blue);
-box-shadow:0 0 0 3px #42e8ff12;
+
+box-shadow:
+0 0 0 3px #42e8ff12;
 }
 
 .btn{
 width:100%;
+
 margin-top:20px;
+
 padding:15px;
+
 border:0;
 border-radius:14px;
+
 font-weight:900;
 font-size:15px;
 }
 
 .primary{
 color:#03101b;
-background:linear-gradient(100deg,var(--blue),#7597ff);
-box-shadow:0 8px 25px #42e8ff20;
+
+background:
+linear-gradient(
+100deg,
+var(--blue),
+#7597ff
+);
+
+box-shadow:
+0 8px 25px #42e8ff20;
 }
 
 .error{
 margin-top:12px;
+
 color:#ff7184;
+
 font-weight:bold;
 }
 
@@ -173,25 +237,42 @@ font-weight:bold;
 display:none;
 }
 
+
+/* =========================
+   TABS
+========================= */
+
 .tabs{
 display:flex;
 gap:8px;
+
 margin-bottom:20px;
 }
 
 .tab{
 flex:1;
+
 padding:13px 8px;
+
 border:1px solid #2c3a58;
 border-radius:13px;
+
 background:#0b1222;
+
 color:#8994ae;
+
 font-weight:900;
 }
 
 .tab.active{
 color:#06101b;
-background:linear-gradient(90deg,var(--blue),#8d82ff);
+
+background:
+linear-gradient(
+90deg,
+var(--blue),
+#8d82ff
+);
 }
 
 .tabContent{
@@ -209,15 +290,20 @@ display:block;
 
 .rifa{
 margin-top:14px;
+
 padding:18px;
+
 border:1px solid #293954;
 border-radius:18px;
+
 background:#0a101f;
 }
 
 .rifaTop{
 display:flex;
+
 justify-content:space-between;
+
 gap:15px;
 }
 
@@ -227,20 +313,29 @@ margin:0 0 8px;
 
 .rifaImage{
 display:block;
+
 width:100%;
 max-height:300px;
+
 object-fit:cover;
+
 margin-bottom:16px;
+
 border-radius:15px;
+
 border:1px solid #293954;
 }
 
 .badge{
 height:max-content;
+
 padding:6px 10px;
+
 border-radius:20px;
+
 font-size:11px;
 font-weight:900;
+
 white-space:nowrap;
 }
 
@@ -271,21 +366,30 @@ background:var(--red);
 
 .stats{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+
+grid-template-columns:
+repeat(3,1fr);
+
 gap:8px;
+
 margin-top:15px;
 }
 
 .stat{
 padding:12px;
+
 border-radius:13px;
+
 background:#11192b;
+
 text-align:center;
 }
 
 .stat b{
 display:block;
+
 color:var(--blue);
+
 font-size:19px;
 }
 
@@ -295,72 +399,84 @@ color:var(--muted);
 
 .actions{
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+1fr 1fr;
+
 gap:8px;
+
 margin-top:14px;
 }
 
 .action{
 padding:12px;
+
 border:1px solid #304064;
 border-radius:12px;
+
 background:#0d1527;
+
 color:#fff;
+
 font-weight:800;
+
 text-align:center;
-text-decoration:none;
 }
 
 .action.delete{
 color:#ff7184;
+
 border-color:#693342;
-}
-
-.action.accept{
-color:#6ff0aa;
-border-color:#286c4b;
-}
-
-.action.whatsapp{
-color:#6ff0aa;
-border-color:#286c4b;
-}
-
-.action.call{
-color:var(--blue);
-border-color:#286078;
 }
 
 .empty{
 padding:25px;
+
 text-align:center;
+
 color:var(--muted);
+
 border:1px dashed #334361;
+
 border-radius:18px;
 }
 
 
 /* =========================
-   SOLICITUDES - CARTAS
+   SOLICITUDES
 ========================= */
 
 .requestCard{
 position:relative;
+
 margin-top:14px;
+
 padding:18px;
+
 border:1px solid #273654;
 border-radius:18px;
+
 background:
-linear-gradient(145deg,#0d1428,#080d19);
+linear-gradient(
+145deg,
+#0d1428,
+#080d19
+);
+
 cursor:pointer;
+
 transition:.2s;
+
 overflow:hidden;
 }
 
 .requestCard:hover{
 border-color:var(--blue);
+
 transform:translateY(-2px);
-box-shadow:0 12px 35px #0008;
+
+box-shadow:
+0 12px 35px #0008;
 }
 
 .requestCard:active{
@@ -381,8 +497,10 @@ border-top:3px solid var(--red);
 
 .requestCardTop{
 display:flex;
+
 align-items:center;
 justify-content:space-between;
+
 gap:12px;
 }
 
@@ -392,34 +510,48 @@ min-width:0;
 
 .requestPerson h3{
 margin:0 0 6px;
+
 font-size:20px;
+
 white-space:nowrap;
+
 overflow:hidden;
+
 text-overflow:ellipsis;
 }
 
 .requestPhone{
 color:var(--muted);
+
 font-size:14px;
 }
 
 .requestSummary{
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+1fr 1fr;
+
 gap:8px;
+
 margin-top:15px;
 }
 
 .requestMini{
 padding:10px;
+
 border-radius:11px;
+
 background:#11192b;
 }
 
 .requestMini small{
 display:block;
+
 color:var(--muted);
+
 font-size:11px;
+
 margin-bottom:4px;
 }
 
@@ -429,19 +561,23 @@ font-size:14px;
 
 .requestHint{
 margin-top:13px;
+
 text-align:center;
+
 font-size:12px;
+
 color:var(--muted);
 }
 
 .requestHint span{
 color:var(--blue);
+
 font-weight:900;
 }
 
 
 /* =========================
-   DETALLE SOLICITUD
+   DETALLE
 ========================= */
 
 .requestDetail{
@@ -458,80 +594,125 @@ display:none;
 
 .backButton{
 width:100%;
+
 padding:13px;
+
 border:1px solid #304064;
 border-radius:13px;
+
 background:#0d1527;
+
 color:#fff;
+
 font-weight:900;
+
 margin-bottom:15px;
 }
 
 .detailCard{
 position:relative;
+
 overflow:hidden;
+
 padding:0;
+
 border:2px solid transparent;
+
 border-radius:28px;
+
 background:
 linear-gradient(#080d1c,#080d1c) padding-box,
-linear-gradient(135deg,var(--blue),#c800ff) border-box;
-box-shadow:0 20px 60px #0009;
+linear-gradient(
+135deg,
+var(--blue),
+#c800ff
+) border-box;
+
+box-shadow:
+0 20px 60px #0009;
 }
 
 .detailHeader{
 padding:28px 28px 25px;
+
 background:
-radial-gradient(circle at 100% 0%,#211357,transparent 40%),
-linear-gradient(135deg,#0d1428,#080d19);
+radial-gradient(
+circle at 100% 0%,
+#211357,
+transparent 40%
+),
+linear-gradient(
+135deg,
+#0d1428,
+#080d19
+);
+
 border-bottom:1px solid #293954;
 }
 
 .detailNameRow{
 display:flex;
+
 justify-content:space-between;
+
 align-items:flex-start;
+
 gap:15px;
 }
 
 .detailName{
 font-size:29px;
+
 font-weight:900;
+
 margin:0 0 10px;
 }
 
 .detailPhone{
 font-size:25px;
+
 color:#f4f7ff;
+
 letter-spacing:.5px;
 }
 
 .contactButtons{
 display:flex;
+
 gap:13px;
+
 margin-top:20px;
 }
 
 .contactBtn{
 width:58px;
 height:58px;
+
 display:flex;
+
 align-items:center;
 justify-content:center;
+
 border-radius:50%;
+
 text-decoration:none;
+
 font-size:27px;
+
 border:2px solid;
+
 background:#080d19;
 }
 
 .contactBtn.whatsapp{
 color:#58df7e;
+
 border-color:#58df7e;
 }
 
 .contactBtn.call{
 color:var(--gold);
+
 border-color:var(--gold);
 }
 
@@ -541,27 +722,38 @@ padding:28px;
 
 .detailStatus{
 display:flex;
+
 align-items:center;
+
 gap:12px;
+
 margin-bottom:27px;
 }
 
 .detailLabel{
 font-size:24px;
+
 font-weight:900;
 }
 
 .detailInfo{
 display:flex;
+
 flex-direction:column;
+
 gap:22px;
 }
 
 .detailRow{
 display:grid;
-grid-template-columns:auto 1fr;
+
+grid-template-columns:
+auto 1fr;
+
 gap:12px;
+
 align-items:baseline;
+
 font-size:22px;
 }
 
@@ -571,6 +763,7 @@ font-weight:900;
 
 .detailRow span{
 color:#f5f5f7;
+
 word-break:break-word;
 }
 
@@ -580,19 +773,29 @@ margin-top:30px;
 
 .detailNumbersTitle{
 font-size:23px;
+
 font-weight:900;
+
 margin-bottom:14px;
 }
 
 .numbersBox{
 padding:17px;
+
 border-radius:15px;
+
 background:#0e1629;
+
 border:1px solid #263654;
+
 color:var(--blue);
+
 font-size:22px;
+
 font-weight:900;
+
 line-height:1.7;
+
 word-break:break-word;
 }
 
@@ -603,83 +806,154 @@ word-break:break-word;
 
 .receiptBox{
 margin-top:28px;
+
 padding:18px;
+
 border:1px solid #293954;
+
 border-radius:17px;
+
 background:#080d18;
 }
 
-.receiptTitle{
-font-size:22px;
-font-weight:900;
-}
 
-.receiptImage{
-display:block;
+/*
+   ESTE ES EL BOTÓN QUE
+   ABRE EL COMPROBANTE
+*/
+
+.receiptButton{
 width:100%;
-max-height:600px;
-object-fit:contain;
-margin-top:15px;
-border-radius:13px;
-background:#000;
-border:1px solid #263654;
-}
 
-.receiptPdf{
-display:block;
-margin-top:14px;
-padding:15px;
-border:1px solid #304064;
-border-radius:12px;
-color:var(--blue);
-background:#0d1527;
-text-align:center;
+min-height:115px;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:20px;
+
+border:0;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+100deg,
+#8245f5,
+#4f91d9,
+#00c96b
+);
+
+color:#06101b;
+
 font-weight:900;
-text-decoration:none;
+
+font-size:22px;
+
+text-align:left;
+
+box-shadow:
+0 10px 30px #0006;
+
+transition:.2s;
 }
 
-.receiptEmpty{
-margin-top:12px;
-padding:15px;
-border-radius:12px;
-background:#11192b;
-color:var(--muted);
+.receiptButton:hover{
+transform:translateY(-2px);
+
+filter:brightness(1.08);
+}
+
+.receiptButton:active{
+transform:scale(.98);
+}
+
+.receiptIcon{
+width:85px;
+
+min-width:85px;
+
+height:85px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:55px;
+}
+
+.receiptText{
+flex:1;
+}
+
+.receiptText strong{
+display:block;
+
+font-size:25px;
+
+margin-bottom:5px;
+}
+
+.receiptText small{
+display:block;
+
+font-size:13px;
+
+opacity:.7;
 }
 
 
 /* =========================
-   BOTONES DETALLE
+   BOTONES
 ========================= */
 
 .detailActions{
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+1fr 1fr;
+
 gap:18px;
+
 margin-top:32px;
+
 padding-bottom:10px;
 }
 
 .detailAction{
 min-height:75px;
+
 border:3px solid;
+
 border-radius:24px;
+
 background:#080d19;
+
 font-size:23px;
+
 font-weight:900;
 }
 
 .detailAccept{
 color:#65df7d;
+
 border-color:#65df7d;
 }
 
 .detailReject{
 color:#ff3340;
+
 border-color:#ff3340;
 }
 
 .detailAction:disabled{
 opacity:.35;
+
 cursor:not-allowed;
 }
 
@@ -690,13 +964,164 @@ cursor:not-allowed;
 
 .success{
 display:none;
+
 margin-top:15px;
+
 padding:13px;
+
 border:1px solid #238052;
+
 border-radius:12px;
+
 background:#092318;
+
 color:#6ff0aa;
+
 font-weight:bold;
+}
+
+
+/* ==================================================
+   MODAL DEL COMPROBANTE
+================================================== */
+
+.receiptModal{
+position:fixed;
+
+inset:0;
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+padding:18px;
+
+background:
+rgba(0,0,0,.88);
+
+backdrop-filter:blur(8px);
+
+z-index:9999;
+}
+
+.receiptModal.active{
+display:flex;
+}
+
+.receiptModalContent{
+position:relative;
+
+width:min(760px,100%);
+
+max-height:95vh;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+padding:15px;
+
+border:1px solid #33456d;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+180deg,
+#10172a,
+#050914
+);
+
+box-shadow:
+0 30px 100px #000;
+}
+
+.receiptModalTitle{
+width:100%;
+
+padding:5px 55px 15px 8px;
+
+font-size:20px;
+
+font-weight:900;
+}
+
+.receiptModalImage{
+display:block;
+
+max-width:100%;
+
+max-height:78vh;
+
+object-fit:contain;
+
+border-radius:12px;
+
+background:#000;
+}
+
+.closeReceipt{
+position:absolute;
+
+top:10px;
+
+right:10px;
+
+width:44px;
+
+height:44px;
+
+border:1px solid #475779;
+
+border-radius:50%;
+
+background:#111a2e;
+
+color:#fff;
+
+font-size:26px;
+
+font-weight:900;
+
+z-index:2;
+}
+
+.closeReceipt:hover{
+background:#202c48;
+}
+
+.pdfViewer{
+width:100%;
+
+height:75vh;
+
+border:0;
+
+border-radius:12px;
+
+background:#fff;
+}
+
+.openPdfButton{
+display:block;
+
+margin-top:10px;
+
+padding:12px 18px;
+
+border-radius:12px;
+
+background:var(--blue);
+
+color:#041018;
+
+text-decoration:none;
+
+font-weight:900;
 }
 
 
@@ -716,7 +1141,22 @@ padding:0 12px;
 
 .logo{
 font-size:13px;
+
 padding:9px 11px;
+}
+
+.logout{
+font-size:12px;
+
+padding:10px 11px;
+}
+
+.tabs{
+flex-wrap:wrap;
+}
+
+.tab{
+min-width:30%;
 }
 
 .stats{
@@ -729,14 +1169,6 @@ grid-template-columns:1fr;
 
 .rifaTop{
 flex-direction:column;
-}
-
-.tabs{
-flex-wrap:wrap;
-}
-
-.tab{
-min-width:30%;
 }
 
 .detailHeader{
@@ -757,22 +1189,27 @@ font-size:21px;
 
 .detailRow{
 grid-template-columns:1fr;
+
 gap:4px;
+
 font-size:21px;
 }
 
 .detailStatus{
 align-items:flex-start;
+
 flex-direction:column;
 }
 
 .detailActions{
 grid-template-columns:1fr;
+
 gap:13px;
 }
 
 .detailAction{
 min-height:68px;
+
 font-size:20px;
 }
 
@@ -780,6 +1217,85 @@ font-size:20px;
 font-size:19px;
 }
 
+.receiptButton{
+min-height:105px;
+
+padding:15px;
+
+gap:10px;
+
+font-size:18px;
+}
+
+.receiptIcon{
+width:65px;
+
+min-width:65px;
+
+height:65px;
+
+font-size:43px;
+}
+
+.receiptText strong{
+font-size:20px;
+}
+
+.receiptText small{
+font-size:11px;
+}
+
+.receiptModal{
+padding:8px;
+}
+
+.receiptModalContent{
+padding:10px;
+
+border-radius:16px;
+}
+
+.receiptModalImage{
+max-height:82vh;
+}
+
+}
+
+
+/* =========================
+   DESKTOP GRANDE
+========================= */
+
+@media(min-width:601px){
+
+.receiptButton{
+cursor:pointer;
+}
+
+}
+
+
+/* =========================
+   ANIMACIÓN MODAL
+========================= */
+
+@keyframes modalIn{
+
+from{
+opacity:0;
+transform:scale(.94);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+.receiptModal.active .receiptModalContent{
+animation:
+modalIn .2s ease;
 }
 
 </style>
@@ -788,6 +1304,10 @@ font-size:19px;
 <body>
 
 
+<!-- ==================================================
+     HEADER
+================================================== -->
+
 <header>
 
 <div class="logo">
@@ -795,8 +1315,12 @@ RIFAS LUXURY
 <span>RD</span>
 </div>
 
-<button class="logout" onclick="logout()">
+<button
+class="logout"
+onclick="logout()">
+
 Cerrar sesión
+
 </button>
 
 </header>
@@ -805,15 +1329,22 @@ Cerrar sesión
 <main>
 
 
-<!-- LOGIN -->
+<!-- ==================================================
+     LOGIN
+================================================== -->
 
-<section id="loginBox" class="card login">
+<section
+id="loginBox"
+class="card login">
 
-<h1>🔐 Panel administrativo</h1>
+<h1>
+🔐 Panel administrativo
+</h1>
 
 <p class="muted">
 Inicia sesión para crear y administrar tus rifas.
 </p>
+
 
 <label>
 Correo electrónico
@@ -824,6 +1355,7 @@ id="email"
 type="email"
 placeholder="Correo electrónico">
 
+
 <label>
 Contraseña
 </label>
@@ -833,6 +1365,7 @@ id="pass"
 type="password"
 placeholder="Contraseña">
 
+
 <button
 class="btn primary"
 onclick="login()">
@@ -840,6 +1373,7 @@ onclick="login()">
 ENTRAR AL PANEL
 
 </button>
+
 
 <div
 id="loginError"
@@ -850,7 +1384,9 @@ class="error">
 
 
 
-<!-- PANEL -->
+<!-- ==================================================
+     PANEL
+================================================== -->
 
 <section
 id="adminPanel"
@@ -858,6 +1394,7 @@ class="panel">
 
 
 <div class="tabs">
+
 
 <button
 id="tabCreate"
@@ -888,13 +1425,14 @@ onclick="showTab('requests')">
 
 </button>
 
+
 </div>
 
 
 
-<!-- =========================
-     CREAR
-========================= -->
+<!-- ==================================================
+     CREAR RIFA
+================================================== -->
 
 <div
 id="create"
@@ -963,6 +1501,7 @@ id="ri"
 type="file"
 accept="image/*">
 
+
 <div
 class="muted"
 style="margin-top:8px">
@@ -1004,9 +1543,9 @@ class="success">
 
 
 
-<!-- =========================
+<!-- ==================================================
      MIS RIFAS
-========================= -->
+================================================== -->
 
 <div
 id="rifas"
@@ -1030,9 +1569,9 @@ Aquí puedes activar, desactivar o eliminar tus rifas.
 
 
 
-<!-- =========================
+<!-- ==================================================
      SOLICITUDES
-========================= -->
+================================================== -->
 
 <div
 id="requests"
@@ -1075,7 +1614,6 @@ onclick="closeRequestDetail()">
 
 <div
 id="requestDetailContent">
-
 </div>
 
 </div>
@@ -1090,33 +1628,80 @@ id="requestDetailContent">
 
 
 
+<!-- ==================================================
+     MODAL COMPROBANTE
+================================================== -->
+
+<div
+id="receiptModal"
+class="receiptModal"
+onclick="closeReceiptModal(event)">
+
+<div
+class="receiptModalContent"
+onclick="event.stopPropagation()">
+
+
+<button
+class="closeReceipt"
+onclick="closeReceiptModal()">
+
+×
+</button>
+
+
+<div
+class="receiptModalTitle">
+
+🧾 Comprobante de pago
+
+</div>
+
+
+<div id="receiptModalBody"></div>
+
+
+</div>
+
+</div>
+
+
+
 <script>
 
 
-/* =========================
+/* ==================================================
    CONFIGURACIÓN
-========================= */
+================================================== */
 
 const R='rlrd_raffles';
 const Q='rlrd_requests';
 const SESSION='rlrd_admin_session';
+
 
 const EMAIL='Kleinel1995@gmail.com';
 const PASSWORD='@Kleinel1995';
 
 
 
-/* =========================
+/* ==================================================
    STORAGE
-========================= */
+================================================== */
 
 function get(key,defaultValue=[]){
 
 try{
 
-return JSON.parse(
-localStorage.getItem(key)
-) || defaultValue;
+const value=
+localStorage.getItem(key);
+
+if(!value){
+
+return defaultValue;
+
+}
+
+return JSON.parse(value);
 
 }catch(e){
 
@@ -1138,26 +1723,31 @@ JSON.stringify(value)
 
 
 
-/* =========================
+/* ==================================================
    LOGIN
-========================= */
+================================================== */
 
 function login(){
 
 const email=
-document.getElementById('email')
-.value.trim();
+document
+.getElementById('email')
+.value
+.trim();
 
 const pass=
-document.getElementById('pass')
+document
+.getElementById('pass')
 .value;
 
 const error=
-document.getElementById('loginError');
+document
+.getElementById('loginError');
 
 
 if(
-email.toLowerCase()===EMAIL.toLowerCase() &&
+email.toLowerCase()===
+EMAIL.toLowerCase() &&
 pass===PASSWORD
 ){
 
@@ -1180,7 +1770,9 @@ error.textContent=
 
 function logout(){
 
-sessionStorage.removeItem(SESSION);
+sessionStorage.removeItem(
+SESSION
+);
 
 location.reload();
 
@@ -1188,19 +1780,20 @@ location.reload();
 
 
 
-/* =========================
-   PANEL
-========================= */
+/* ==================================================
+   MOSTRAR PANEL
+================================================== */
 
 function showPanel(){
 
-document.getElementById(
-'loginBox'
-).style.display='none';
+document
+.getElementById('loginBox')
+.style.display='none';
 
-document.getElementById(
-'adminPanel'
-).style.display='block';
+document
+.getElementById('adminPanel')
+.style.display='block';
+
 
 renderRaffles();
 
@@ -1210,23 +1803,28 @@ renderRequests();
 
 
 
-/* =========================
+/* ==================================================
    TABS
-========================= */
+================================================== */
 
 function showTab(tab){
 
 document
 .querySelectorAll('.tab')
-.forEach(x=>
-x.classList.remove('active')
-);
+.forEach(x=>{
+
+x.classList.remove('active');
+
+});
+
 
 document
 .querySelectorAll('.tabContent')
-.forEach(x=>
-x.classList.remove('active')
-);
+.forEach(x=>{
+
+x.classList.remove('active');
+
+});
 
 
 if(tab==='create'){
@@ -1277,35 +1875,51 @@ renderRequests();
 
 
 
-/* =========================
+/* ==================================================
    CREAR RIFA
-========================= */
+================================================== */
 
 function createRaffle(){
 
 const name=
-document.getElementById('rn')
-.value.trim();
+document
+.getElementById('rn')
+.value
+.trim();
+
 
 const price=
 Number(
-document.getElementById('rp').value
+document
+.getElementById('rp')
+.value
 );
+
 
 const total=
 Number(
-document.getElementById('rt').value
+document
+.getElementById('rt')
+.value
 );
 
+
 const date=
-document.getElementById('rd').value;
+document
+.getElementById('rd')
+.value;
+
 
 const description=
-document.getElementById('rx')
-.value.trim();
+document
+.getElementById('rx')
+.value
+.trim();
+
 
 const imageFile=
-document.getElementById('ri')
+document
+.getElementById('ri')
 .files[0];
 
 
@@ -1430,6 +2044,10 @@ description,
 
 
 
+/* ==================================================
+   GUARDAR RIFA
+================================================== */
+
 function saveRaffle(
 name,
 price,
@@ -1513,18 +2131,19 @@ renderRaffles();
 
 
 
-/* =========================
+/* ==================================================
    ACTIVAR / DESACTIVAR
-========================= */
+================================================== */
 
 function toggleRaffle(id){
 
 const raffles=
 get(R,[]);
 
+
 const raffle=
 raffles.find(
-x=>x.id===id
+x=>String(x.id)===String(id)
 );
 
 
@@ -1543,18 +2162,19 @@ renderRaffles();
 
 
 
-/* =========================
+/* ==================================================
    ELIMINAR
-========================= */
+================================================== */
 
 function deleteRaffle(id){
 
 const raffles=
 get(R,[]);
 
+
 const raffle=
 raffles.find(
-x=>x.id===id
+x=>String(x.id)===String(id)
 );
 
 
@@ -1565,13 +2185,17 @@ if(!confirm(
 '¿Seguro que quieres eliminar la rifa "'+
 raffle.name+
 '"?'
-))return;
+)){
+
+return;
+
+}
 
 
 put(
 R,
 raffles.filter(
-x=>x.id!==id
+x=>String(x.id)!==String(id)
 )
 );
 
@@ -1582,9 +2206,9 @@ renderRaffles();
 
 
 
-/* =========================
+/* ==================================================
    DINERO
-========================= */
+================================================== */
 
 function money(value){
 
@@ -1602,13 +2226,13 @@ maximumFractionDigits:2
 
 
 
-/* =========================
+/* ==================================================
    ESCAPAR HTML
-========================= */
+================================================== */
 
 function escapeHtml(value){
 
-return String(value||'')
+return String(value??'')
 .replaceAll('&','&amp;')
 .replaceAll('<','&lt;')
 .replaceAll('>','&gt;')
@@ -1619,16 +2243,16 @@ return String(value||'')
 
 
 
-/* =========================
+/* ==================================================
    RIFAS
-========================= */
+================================================== */
 
 function renderRaffles(){
 
 const list=
-document.getElementById(
-'raffleList'
-);
+document
+.getElementById('raffleList');
+
 
 const raffles=
 get(R,[]);
@@ -1636,8 +2260,15 @@ get(R,[]);
 
 if(!raffles.length){
 
-list.innerHTML=
-'<div class="empty">No tienes rifas creadas todavía.</div>';
+list.innerHTML=`
+
+<div class="empty">
+
+No tienes rifas creadas todavía.
+
+</div>
+
+`;
 
 return;
 
@@ -1651,24 +2282,43 @@ raffles
 .reverse()
 .map(r=>{
 
-const sold=
+const soldArray=
 Array.isArray(r.sold)
-?r.sold.length
-:0;
+?r.sold
+:[];
+
+
+const soldUnique=
+[
+...new Set(
+soldArray.map(Number)
+)
+]
+.filter(
+x=>Number.isFinite(x)
+);
+
+
+const sold=
+soldUnique.length;
+
+
+const total=
+Number(r.totalNumbers)||0;
 
 
 const available=
 Math.max(
 0,
-Number(r.totalNumbers)-sold
+total-sold
 );
 
 
 const percentage=
-r.totalNumbers
+total
 ?
 Math.round(
-sold/r.totalNumbers*100
+sold/total*100
 )
 :0;
 
@@ -1676,6 +2326,7 @@ sold/r.totalNumbers*100
 return `
 
 <div class="rifa">
+
 
 ${r.image?`
 
@@ -1689,18 +2340,25 @@ alt="${escapeHtml(r.name)}">
 
 <div class="rifaTop">
 
+
 <div>
 
 <h3>
+
 ${escapeHtml(r.name)}
+
 </h3>
 
+
 <div class="muted">
+
 ${escapeHtml(
 r.description||
 'Sin descripción'
 )}
+
 </div>
+
 
 <div
 class="muted"
@@ -1721,10 +2379,13 @@ ${r.active?'ACTIVA':'INACTIVA'}
 
 </span>
 
+
 </div>
 
 
+
 <div class="stats">
+
 
 <div class="stat">
 
@@ -1742,7 +2403,7 @@ Precio
 <div class="stat">
 
 <b>
-${r.totalNumbers}
+${total}
 </b>
 
 <small>
@@ -1764,6 +2425,7 @@ Vendidos
 
 </div>
 
+
 </div>
 
 
@@ -1780,11 +2442,13 @@ Disponibles:
 </div>
 
 
+
 <div class="actions">
+
 
 <button
 class="action"
-onclick="toggleRaffle('${r.id}')">
+onclick="toggleRaffle('${escapeHtml(r.id)}')">
 
 ${r.active
 ?'⏸ Desactivar'
@@ -1795,11 +2459,12 @@ ${r.active
 
 <button
 class="action delete"
-onclick="deleteRaffle('${r.id}')">
+onclick="deleteRaffle('${escapeHtml(r.id)}')">
 
 🗑 Eliminar
 
 </button>
+
 
 </div>
 
@@ -1808,22 +2473,23 @@ onclick="deleteRaffle('${r.id}')">
 
 `;
 
-}).join('');
+})
+.join('');
 
 }
 
 
 
-/* =========================================================
+/* ==================================================
    SOLICITUDES
-========================================================= */
+================================================== */
 
 function renderRequests(){
 
 const list=
-document.getElementById(
-'requestList'
-);
+document
+.getElementById('requestList');
+
 
 const requests=
 get(Q,[]);
@@ -1831,18 +2497,20 @@ get(Q,[]);
 
 if(!requests.length){
 
-list.innerHTML=
-'<div class="empty">No hay solicitudes todavía.</div>';
+list.innerHTML=`
+
+<div class="empty">
+
+No hay solicitudes todavía.
+
+</div>
+
+`;
 
 return;
 
 }
 
-
-/*
-   Aquí se muestran solamente las cartas.
-   Al tocar una carta se abre el detalle.
-*/
 
 list.innerHTML=
 
@@ -1867,20 +2535,34 @@ return `
 
 <div
 class="requestCard ${status}"
-onclick="openRequestDetail('${q.id}')">
+onclick="openRequestDetail('${escapeHtml(q.id)}')">
 
 
 <div class="requestCardTop">
 
+
 <div class="requestPerson">
 
+
 <h3>
-${escapeHtml(q.name||'Sin nombre')}
+
+${escapeHtml(
+q.name||
+'Sin nombre'
+)}
+
 </h3>
 
+
 <div class="requestPhone">
-${escapeHtml(q.phone||'Sin teléfono')}
+
+${escapeHtml(
+q.phone||
+'Sin teléfono'
+)}
+
 </div>
+
 
 </div>
 
@@ -1892,7 +2574,9 @@ ${statusText}
 
 </span>
 
+
 </div>
+
 
 
 <div class="requestSummary">
@@ -1905,10 +2589,16 @@ RIFA
 </small>
 
 <b>
-${escapeHtml(q.raffleName||'Sin rifa')}
+
+${escapeHtml(
+q.raffleName||
+'Sin rifa'
+)}
+
 </b>
 
 </div>
+
 
 
 <div class="requestMini">
@@ -1918,10 +2608,14 @@ CANTIDAD
 </small>
 
 <b>
-${q.count||0} boletos
+
+${q.count||0}
+boletos
+
 </b>
 
 </div>
+
 
 
 <div class="requestMini">
@@ -1931,10 +2625,13 @@ TOTAL
 </small>
 
 <b>
+
 ${money(q.total)}
+
 </b>
 
 </div>
+
 
 
 <div class="requestMini">
@@ -1944,7 +2641,12 @@ BANCO
 </small>
 
 <b>
-${escapeHtml(q.bank||'')}
+
+${escapeHtml(
+q.bank||
+''
+)}
+
 </b>
 
 </div>
@@ -1953,9 +2655,11 @@ ${escapeHtml(q.bank||'')}
 </div>
 
 
+
 <div class="requestHint">
 
 Toca para ver la información completa
+
 <span>→</span>
 
 </div>
@@ -1965,15 +2669,16 @@ Toca para ver la información completa
 
 `;
 
-}).join('');
+})
+.join('');
 
 }
 
 
 
-/* =========================================================
+/* ==================================================
    ABRIR DETALLE
-========================================================= */
+================================================== */
 
 function openRequestDetail(id){
 
@@ -2000,20 +2705,14 @@ return;
 }
 
 
-const listView=
-document.getElementById(
-'requestListView'
-);
-
-const detail=
-document.getElementById(
-'requestDetail'
-);
+document
+.getElementById('requestListView')
+.classList.add('hidden');
 
 
-listView.classList.add('hidden');
-
-detail.classList.add('active');
+document
+.getElementById('requestDetail')
+.classList.add('active');
 
 
 renderRequestDetail(request);
@@ -2028,16 +2727,15 @@ behavior:'smooth'
 
 
 
-/* =========================================================
+/* ==================================================
    DETALLE COMPLETO
-========================================================= */
+================================================== */
 
 function renderRequestDetail(q){
 
 const container=
-document.getElementById(
-'requestDetailContent'
-);
+document
+.getElementById('requestDetailContent');
 
 
 const status=
@@ -2052,7 +2750,10 @@ status==='rejected'
 'PENDIENTE';
 
 
-/* TELÉFONO */
+
+/* =========================
+   TELÉFONO
+========================= */
 
 const phoneClean=
 String(q.phone||'')
@@ -2062,11 +2763,6 @@ String(q.phone||'')
 let whatsappPhone=
 phoneClean;
 
-
-/*
-   Si es un teléfono dominicano de 10 dígitos,
-   agregamos el código +1 para WhatsApp.
-*/
 
 if(
 whatsappPhone.length===10 &&
@@ -2092,7 +2788,10 @@ encodeURIComponent(
 );
 
 
-/* NÚMEROS */
+
+/* =========================
+   NÚMEROS
+========================= */
 
 const numbers=
 Array.isArray(q.numbers)
@@ -2100,14 +2799,20 @@ Array.isArray(q.numbers)
 :[];
 
 
-/* FECHA */
+
+/* =========================
+   FECHA
+========================= */
 
 const dateText=
 q.createdAt||
 'No disponible';
 
 
-/* COMPROBANTE */
+
+/* ==================================================
+   COMPROBANTE
+================================================== */
 
 let receiptHTML='';
 
@@ -2115,8 +2820,8 @@ let receiptHTML='';
 if(q.receiptData){
 
 /*
-   Si el archivo es PDF, mostramos botón.
-   Si es imagen, mostramos imagen.
+   AHORA EL COMPROBANTE ES UN
+   BOTÓN QUE ABRE LA FOTO.
 */
 
 if(
@@ -2128,14 +2833,30 @@ String(q.fileName||'')
 
 receiptHTML=`
 
-<a
-class="receiptPdf"
-href="${q.receiptData}"
-target="_blank">
+<button
+class="receiptButton"
+onclick="openReceipt(
+'${escapeHtml(q.receiptData)}',
+'pdf'
+)">
 
-📄 ABRIR COMPROBANTE PDF
+<div class="receiptIcon">
+🧾
+</div>
 
-</a>
+<div class="receiptText">
+
+<strong>
+Comprobante de pago
+</strong>
+
+<small>
+Toca para abrir el comprobante PDF
+</small>
+
+</div>
+
+</button>
 
 `;
 
@@ -2143,24 +2864,30 @@ target="_blank">
 
 receiptHTML=`
 
-<a
-href="${q.receiptData}"
-target="_blank">
+<button
+class="receiptButton"
+onclick="openReceipt(
+'${escapeHtml(q.receiptData)}',
+'image'
+)">
 
-<img
-class="receiptImage"
-src="${q.receiptData}"
-alt="Comprobante de pago">
+<div class="receiptIcon">
+🧾
+</div>
 
-</a>
+<div class="receiptText">
 
-<div
-class="muted"
-style="margin-top:8px">
+<strong>
+Comprobante de pago
+</strong>
 
-Toca el comprobante para verlo completo.
+<small>
+Toca para ver la foto del comprobante
+</small>
 
 </div>
+
+</button>
 
 `;
 
@@ -2174,9 +2901,14 @@ receiptHTML=`
 
 No hay comprobante visual disponible.
 
-${q.fileName
-?`<br>Archivo: ${escapeHtml(q.fileName)}`
-:'<br>No se recibió archivo.'}
+${
+q.fileName
+?
+`<br>Archivo:
+${escapeHtml(q.fileName)}`
+:
+'<br>No se recibió archivo.'
+}
 
 </div>
 
@@ -2185,7 +2917,10 @@ ${q.fileName
 }
 
 
-/* BOTONES DE CONTACTO */
+
+/* =========================
+   CONTACTO
+========================= */
 
 let contactHTML='';
 
@@ -2225,7 +2960,10 @@ title="Llamar">
 }
 
 
-/* BOTONES DE PROCESAMIENTO */
+
+/* ==================================================
+   BOTONES ACEPTAR / RECHAZAR
+================================================== */
 
 let processButtons='';
 
@@ -2239,7 +2977,7 @@ processButtons=`
 
 <button
 class="detailAction detailAccept"
-onclick="acceptRequest('${q.id}')">
+onclick="acceptRequest('${escapeHtml(q.id)}')">
 
 ✓ ACEPTAR Y VENDER
 
@@ -2248,7 +2986,7 @@ onclick="acceptRequest('${q.id}')">
 
 <button
 class="detailAction detailReject"
-onclick="rejectRequest('${q.id}')">
+onclick="rejectRequest('${escapeHtml(q.id)}')">
 
 ✕ RECHAZAR
 
@@ -2306,6 +3044,11 @@ text-align:center;
 }
 
 
+
+/* ==================================================
+   HTML DEL DETALLE
+================================================== */
+
 container.innerHTML=`
 
 <div class="detailCard">
@@ -2318,12 +3061,15 @@ container.innerHTML=`
 
 <div class="detailNameRow">
 
+
 <div>
+
 
 <div class="detailName">
 
 ${escapeHtml(
-q.name||'Sin nombre'
+q.name||
+'Sin nombre'
 )}
 
 </div>
@@ -2332,7 +3078,8 @@ q.name||'Sin nombre'
 <div class="detailPhone">
 
 ${escapeHtml(
-q.phone||'Sin teléfono'
+q.phone||
+'Sin teléfono'
 )}
 
 </div>
@@ -2340,12 +3087,16 @@ q.phone||'Sin teléfono'
 
 ${contactHTML}
 
+
 </div>
 
 
 <span
 class="badge ${status}"
-style="font-size:14px;padding:9px 14px">
+style="
+font-size:14px;
+padding:9px 14px;
+">
 
 ${statusText}
 
@@ -2353,6 +3104,7 @@ ${statusText}
 
 
 </div>
+
 
 </div>
 
@@ -2368,12 +3120,18 @@ ${statusText}
 <div class="detailStatus">
 
 <div class="detailLabel">
+
 Estado:
+
 </div>
+
 
 <span
 class="badge ${status}"
-style="font-size:14px;padding:9px 15px">
+style="
+font-size:14px;
+padding:9px 15px;
+">
 
 ${statusText}
 
@@ -2395,12 +3153,16 @@ Rifa:
 </strong>
 
 <span>
+
 ${escapeHtml(
-q.raffleName||'Sin rifa'
+q.raffleName||
+'Sin rifa'
 )}
+
 </span>
 
 </div>
+
 
 
 <div class="detailRow">
@@ -2410,10 +3172,13 @@ Cantidad:
 </strong>
 
 <span>
+
 ${q.count||0}
+
 </span>
 
 </div>
+
 
 
 <div class="detailRow">
@@ -2423,10 +3188,13 @@ Total:
 </strong>
 
 <span>
+
 ${money(q.total)}
+
 </span>
 
 </div>
+
 
 
 <div class="detailRow">
@@ -2436,15 +3204,22 @@ Forma de pago:
 </strong>
 
 <span>
+
 ${escapeHtml(
-q.bank||'No especificado'
+q.bank||
+'No especificado'
 )}
+
 </span>
 
 </div>
 
 
-${q.account?`
+
+${
+q.account
+?
+`
 
 <div class="detailRow">
 
@@ -2453,15 +3228,24 @@ Cuenta:
 </strong>
 
 <span>
+
 ${escapeHtml(q.account)}
+
 </span>
 
 </div>
 
-`:''}
+`
+:
+''
+}
 
 
-${q.holder?`
+
+${
+q.holder
+?
+`
 
 <div class="detailRow">
 
@@ -2470,12 +3254,18 @@ Titular:
 </strong>
 
 <span>
+
 ${escapeHtml(q.holder)}
+
 </span>
 
 </div>
 
-`:''}
+`
+:
+''
+}
+
 
 
 <div class="detailRow">
@@ -2485,13 +3275,19 @@ Fecha:
 </strong>
 
 <span>
+
 ${escapeHtml(dateText)}
+
 </span>
 
 </div>
 
 
-${q.email?`
+
+${
+q.email
+?
+`
 
 <div class="detailRow">
 
@@ -2500,12 +3296,17 @@ Correo:
 </strong>
 
 <span>
+
 ${escapeHtml(q.email)}
+
 </span>
 
 </div>
 
-`:''}
+`
+:
+''
+}
 
 
 </div>
@@ -2515,6 +3316,7 @@ ${escapeHtml(q.email)}
 <!-- NÚMEROS -->
 
 <div class="detailNumbers">
+
 
 <div class="detailNumbersTitle">
 
@@ -2535,20 +3337,16 @@ numbers.join(', ')
 
 </div>
 
+
 </div>
 
 
 
-<!-- COMPROBANTE -->
+<!-- ==================================================
+     COMPROBANTE
+================================================== -->
 
 <div class="receiptBox">
-
-<div class="receiptTitle">
-
-🧾 Comprobante de pago
-
-</div>
-
 
 ${receiptHTML}
 
@@ -2571,21 +3369,20 @@ ${processButtons}
 
 
 
-/* =========================================================
+/* ==================================================
    CERRAR DETALLE
-========================================================= */
+================================================== */
 
 function closeRequestDetail(){
 
 const listView=
-document.getElementById(
-'requestListView'
-);
+document
+.getElementById('requestListView');
+
 
 const detail=
-document.getElementById(
-'requestDetail'
-);
+document
+.getElementById('requestDetail');
 
 
 if(listView){
@@ -2605,9 +3402,136 @@ detail.classList.remove('active');
 
 
 
-/* =========================================================
+/* ==================================================
+   ABRIR COMPROBANTE
+================================================== */
+
+function openReceipt(data,type){
+
+const modal=
+document
+.getElementById('receiptModal');
+
+
+const body=
+document
+.getElementById('receiptModalBody');
+
+
+if(!data){
+
+alert(
+'No se encontró el comprobante.'
+);
+
+return;
+
+}
+
+
+/* FOTO */
+
+if(type==='image'){
+
+body.innerHTML=`
+
+<img
+class="receiptModalImage"
+src="${data}"
+alt="Comprobante de pago">
+
+`;
+
+}
+
+
+/* PDF */
+
+else{
+
+body.innerHTML=`
+
+<iframe
+class="pdfViewer"
+src="${data}">
+</iframe>
+
+<a
+class="openPdfButton"
+href="${data}"
+target="_blank">
+
+📄 ABRIR PDF EN OTRA PESTAÑA
+
+</a>
+
+`;
+
+}
+
+
+modal.classList.add('active');
+
+
+document.body.style.overflow='hidden';
+
+}
+
+
+
+/* ==================================================
+   CERRAR COMPROBANTE
+================================================== */
+
+function closeReceiptModal(event){
+
+if(
+event &&
+event.target &&
+event.target.id!=='receiptModal'
+){
+
+return;
+
+}
+
+
+const modal=
+document
+.getElementById('receiptModal');
+
+
+modal.classList.remove('active');
+
+
+document.body.style.overflow='';
+
+}
+
+
+
+/* ==================================================
+   TECLA ESC PARA CERRAR
+================================================== */
+
+document.addEventListener(
+'keydown',
+function(e){
+
+if(e.key==='Escape'){
+
+closeReceiptModal();
+
+}
+
+}
+);
+
+
+
+/* ==================================================
    ACEPTAR SOLICITUD
-========================================================= */
+================================================== */
 
 function acceptRequest(id){
 
@@ -2617,7 +3541,7 @@ get(Q,[]);
 
 const request=
 requests.find(
-x=>x.id===id
+x=>String(x.id)===String(id)
 );
 
 
@@ -2641,7 +3565,8 @@ get(R,[]);
 
 const raffle=
 raffles.find(
-x=>x.id===request.raffleId
+x=>String(x.id)===
+String(request.raffleId)
 );
 
 
@@ -2658,14 +3583,18 @@ return;
 
 const sold=
 Array.isArray(raffle.sold)
-?raffle.sold.map(Number)
-:[];
+?
+raffle.sold.map(Number)
+:
+[];
 
 
 const numbers=
 Array.isArray(request.numbers)
-?request.numbers.map(Number)
-:[];
+?
+request.numbers.map(Number)
+:
+[];
 
 
 if(!numbers.length){
@@ -2696,8 +3625,21 @@ return;
 }
 
 
+const uniqueSold=
+[
+...new Set(sold)
+];
+
+
+const uniqueNumbers=
+[
+...new Set(numbers)
+];
+
+
 if(
-sold.length+numbers.length>
+uniqueSold.length+
+uniqueNumbers.length>
 Number(raffle.totalNumbers)
 ){
 
@@ -2710,11 +3652,14 @@ return;
 }
 
 
-/* MARCAR NÚMEROS COMO VENDIDOS */
+
+/* ==================================================
+   MARCAR COMO VENDIDOS
+================================================== */
 
 raffle.sold=[
-...sold,
-...numbers
+...uniqueSold,
+...uniqueNumbers
 ];
 
 
@@ -2738,14 +3683,11 @@ renderRaffles();
 renderRequests();
 
 
-/*
-   Volvemos a cargar el detalle actualizado.
-*/
-
 const updated=
 requests.find(
-x=>x.id===id
+x=>String(x.id)===String(id)
 );
+
 
 if(updated){
 
@@ -2762,9 +3704,9 @@ alert(
 
 
 
-/* =========================================================
+/* ==================================================
    RECHAZAR
-========================================================= */
+================================================== */
 
 function rejectRequest(id){
 
@@ -2774,7 +3716,7 @@ get(Q,[]);
 
 const request=
 requests.find(
-x=>x.id===id
+x=>String(x.id)===String(id)
 );
 
 
@@ -2794,7 +3736,11 @@ return;
 
 if(!confirm(
 '¿Seguro que quieres rechazar esta solicitud?'
-))return;
+)){
+
+return;
+
+}
 
 
 request.status=
@@ -2815,7 +3761,7 @@ renderRequests();
 
 const updated=
 requests.find(
-x=>x.id===id
+x=>String(x.id)===String(id)
 );
 
 
@@ -2834,9 +3780,53 @@ alert(
 
 
 
-/* =========================================================
+/* ==================================================
+   CERRAR MODAL AL HACER CLICK FUERA
+================================================== */
+
+document
+.getElementById('receiptModal')
+.addEventListener(
+'click',
+function(e){
+
+if(e.target===this){
+
+closeReceiptModal();
+
+}
+
+}
+);
+
+
+
+/* ==================================================
+   ACTUALIZACIÓN ENTRE PESTAÑAS
+================================================== */
+
+window.addEventListener(
+'storage',
+function(){
+
+if(
+sessionStorage.getItem(SESSION)==='1'
+){
+
+renderRaffles();
+
+renderRequests();
+
+}
+
+}
+);
+
+
+
+/* ==================================================
    INICIO
-========================================================= */
+================================================== */
 
 if(
 sessionStorage.getItem(SESSION)==='1'
